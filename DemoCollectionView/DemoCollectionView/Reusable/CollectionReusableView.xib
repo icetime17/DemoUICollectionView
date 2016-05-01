@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="CollectionReusableView">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="250"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RXS-Ww-Sxh">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="250"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xA-18-6fU">
+                    <rect key="frame" x="0.0" y="183" width="200" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="a0c-dA-KTm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezo-Ba-75s">
+                    <rect key="frame" x="75" y="100" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Ufk-ZH-KQp"/>
+                        <constraint firstAttribute="width" secondItem="ezo-Ba-75s" secondAttribute="height" multiplier="1:1" id="rwi-MR-XEd"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="off"/>
+                    <connections>
+                        <action selector="buttonClicked:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="g6I-Op-eAL"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="4xA-18-6fU" firstAttribute="centerX" secondItem="U6b-Vx-4bR" secondAttribute="centerX" id="4Wa-i6-N8Y"/>
+                <constraint firstItem="RXS-Ww-Sxh" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="65i-kC-WxE"/>
+                <constraint firstItem="RXS-Ww-Sxh" firstAttribute="width" secondItem="U6b-Vx-4bR" secondAttribute="width" id="LE5-My-PnJ"/>
+                <constraint firstItem="4xA-18-6fU" firstAttribute="width" secondItem="U6b-Vx-4bR" secondAttribute="width" id="P5j-MA-eol"/>
+                <constraint firstItem="RXS-Ww-Sxh" firstAttribute="height" secondItem="U6b-Vx-4bR" secondAttribute="height" id="QdK-uC-sbm"/>
+                <constraint firstItem="ezo-Ba-75s" firstAttribute="centerX" secondItem="U6b-Vx-4bR" secondAttribute="centerX" id="aAb-vL-GZc"/>
+                <constraint firstItem="ezo-Ba-75s" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="100" id="ifd-3l-bIa"/>
+                <constraint firstItem="ezo-Ba-75s" firstAttribute="width" secondItem="U6b-Vx-4bR" secondAttribute="width" constant="-150" id="leq-zg-4yA"/>
+                <constraint firstItem="4xA-18-6fU" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" constant="83" id="q7J-vH-o87"/>
+                <constraint firstItem="RXS-Ww-Sxh" firstAttribute="centerX" secondItem="U6b-Vx-4bR" secondAttribute="centerX" id="quv-8o-xHT"/>
+            </constraints>
+            <connections>
+                <outlet property="button" destination="ezo-Ba-75s" id="nbJ-3k-zuK"/>
+                <outlet property="imageView" destination="RXS-Ww-Sxh" id="6aQ-t7-OYI"/>
+                <outlet property="label" destination="4xA-18-6fU" id="XuR-z7-dRm"/>
+            </connections>
+            <point key="canvasLocation" x="323" y="449"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="off" width="25" height="25"/>
+    </resources>
+</document>

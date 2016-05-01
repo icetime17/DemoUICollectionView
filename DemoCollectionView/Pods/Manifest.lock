@@ -1,0 +1,10 @@
+PODS:
+  - XXNibBridge (2.2.3)
+
+DEPENDENCIES:
+  - XXNibBridge
+
+SPEC CHECKSUMS:
+  XXNibBridge: 70adcf1e85a2b5500d9de5f12781944dc51b0521
+
+COCOAPODS: 0.38.2
