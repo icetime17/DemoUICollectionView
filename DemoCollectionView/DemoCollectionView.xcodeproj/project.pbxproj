@@ -18,6 +18,8 @@
 		8394C2431CD595340019C3BB /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8394C23F1CD595340019C3BB /* CollectionViewCell.xib */; };
 		8394C2481CD59AD90019C3BB /* CollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8394C2451CD59AD90019C3BB /* CollectionViewLayout.m */; };
 		8394C2491CD59AD90019C3BB /* CustomCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8394C2471CD59AD90019C3BB /* CustomCollectionViewController.m */; };
+		8394C24D1CD5A51B0019C3BB /* FiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8394C24C1CD5A51B0019C3BB /* FiltersViewController.m */; };
+		8394C2501CD5A52E0019C3BB /* FiltersController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8394C24F1CD5A52E0019C3BB /* FiltersController.m */; };
 		A4E362581BA8DCF2003EFC3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E362571BA8DCF2003EFC3A /* main.m */; };
 		A4E3625B1BA8DCF2003EFC3A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E3625A1BA8DCF2003EFC3A /* AppDelegate.m */; };
 		A4E3625E1BA8DCF2003EFC3A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E3625D1BA8DCF2003EFC3A /* ViewController.m */; };
@@ -59,6 +61,10 @@
 		8394C2451CD59AD90019C3BB /* CollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewLayout.m; sourceTree = "<group>"; };
 		8394C2461CD59AD90019C3BB /* CustomCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewController.h; sourceTree = "<group>"; };
 		8394C2471CD59AD90019C3BB /* CustomCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewController.m; sourceTree = "<group>"; };
+		8394C24B1CD5A51B0019C3BB /* FiltersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiltersViewController.h; sourceTree = "<group>"; };
+		8394C24C1CD5A51B0019C3BB /* FiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiltersViewController.m; sourceTree = "<group>"; };
+		8394C24E1CD5A52E0019C3BB /* FiltersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiltersController.h; sourceTree = "<group>"; };
+		8394C24F1CD5A52E0019C3BB /* FiltersController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiltersController.m; sourceTree = "<group>"; };
 		A4E362521BA8DCF2003EFC3A /* DemoCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4E362561BA8DCF2003EFC3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4E362571BA8DCF2003EFC3A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -148,6 +154,17 @@
 			path = Reusable;
 			sourceTree = "<group>";
 		};
+		8394C24A1CD5A3CB0019C3BB /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				8394C24B1CD5A51B0019C3BB /* FiltersViewController.h */,
+				8394C24C1CD5A51B0019C3BB /* FiltersViewController.m */,
+				8394C24E1CD5A52E0019C3BB /* FiltersController.h */,
+				8394C24F1CD5A52E0019C3BB /* FiltersController.m */,
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
 		A4E362491BA8DCF2003EFC3A = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +188,7 @@
 		A4E362541BA8DCF2003EFC3A /* DemoCollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				8394C24A1CD5A3CB0019C3BB /* Filters */,
 				8394C2391CD595340019C3BB /* Reusable */,
 				8394C2351CD594910019C3BB /* HeaderFooter */,
 				8394C2241CD594350019C3BB /* FlowLayout */,
@@ -366,11 +384,13 @@
 				8394C2401CD595340019C3BB /* CollectionReusableView.m in Sources */,
 				8394C2321CD594350019C3BB /* StickCollectionViewFlowLayout.m in Sources */,
 				8394C2381CD594910019C3BB /* HeaderFooterCollectionViewController.m in Sources */,
+				8394C24D1CD5A51B0019C3BB /* FiltersViewController.m in Sources */,
 				A4E3625B1BA8DCF2003EFC3A /* AppDelegate.m in Sources */,
 				8394C2421CD595340019C3BB /* CollectionViewCell.m in Sources */,
 				8394C2311CD594350019C3BB /* CollectionViewsTableViewController.m in Sources */,
 				8394C2491CD59AD90019C3BB /* CustomCollectionViewController.m in Sources */,
 				A4E362581BA8DCF2003EFC3A /* main.m in Sources */,
+				8394C2501CD5A52E0019C3BB /* FiltersController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

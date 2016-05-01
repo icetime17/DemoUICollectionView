@@ -11,7 +11,7 @@
 #import "ViewController.h"
 #import "CollectionViewsTableViewController.h"
 #import "HeaderFooterCollectionViewController.h"
-
+#import "FiltersViewController.h"
 
 @interface ViewController () <
     UICollectionViewDataSource,
@@ -52,7 +52,7 @@
     // Horizontal: section是horizontal放置，而item是vertical放置。一个section中的item在一列中放置不下，就另起一列放置。
     [_layout setScrollDirection:UICollectionViewScrollDirectionVertical];
 
-    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, self.view.frame.size.height - 200) collectionViewLayout:_layout];
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, self.view.frame.size.height - 250) collectionViewLayout:_layout];
     UIView *bgView = [[UIView alloc] initWithFrame:_collectionView.frame];
     bgView.backgroundColor = [UIColor blackColor];
     _collectionView.backgroundView = bgView;
@@ -148,7 +148,7 @@
 #pragma mark - Buttons
 
 - (void)addButton {
-    _btnDirection = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 150, self.view.frame.size.width, 50)];
+    _btnDirection = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 200, self.view.frame.size.width, 50)];
     [_btnDirection setTitle:@"ScrollDirectionVertical" forState:UIControlStateNormal];
     [_btnDirection setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [_btnDirection setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
@@ -157,7 +157,7 @@
     _btnDirection.layer.borderWidth = 2.0f;
     [self.view addSubview:_btnDirection];
     
-    UIButton *btn1 = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 100, self.view.frame.size.width, 50)];
+    UIButton *btn1 = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 150, self.view.frame.size.width, 50)];
     [btn1 setTitle:@"UICollectionViewHeader" forState:UIControlStateNormal];
     [btn1 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [btn1 setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
@@ -166,33 +166,32 @@
     btn1.layer.borderWidth = 2.0f;
     [self.view addSubview:btn1];
     
-    UIButton *btn2 = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 50, self.view.frame.size.width, 50)];
-    [btn2 setTitle:@"UICollectionViewFlowLayout" forState:UIControlStateNormal];
+    UIButton *btn2 = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 100, self.view.frame.size.width, 50)];
+    [btn2 setTitle:@"Filters" forState:UIControlStateNormal];
     [btn2 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [btn2 setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
-    [btn2 addTarget:self action:@selector(actionUICollectionViewFlowLayout:) forControlEvents:UIControlEventTouchUpInside];
+    [btn2 addTarget:self action:@selector(actionFilters:) forControlEvents:UIControlEventTouchUpInside];
     btn2.layer.borderColor = [UIColor redColor].CGColor;
     btn2.layer.borderWidth = 2.0f;
     [self.view addSubview:btn2];
+    
+    UIButton *btn3 = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 50, self.view.frame.size.width, 50)];
+    [btn3 setTitle:@"FlowLayout" forState:UIControlStateNormal];
+    [btn3 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [btn3 setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
+    [btn3 addTarget:self action:@selector(actionUICollectionViewFlowLayout:) forControlEvents:UIControlEventTouchUpInside];
+    btn3.layer.borderColor = [UIColor redColor].CGColor;
+    btn3.layer.borderWidth = 2.0f;
+    [self.view addSubview:btn3];
 }
 
 - (void)actionScrollDirection:(UIButton *)sender {
     _layout.scrollDirection = !_layout.scrollDirection;
     if (_layout.scrollDirection == UICollectionViewScrollDirectionVertical) {
         [_btnDirection setTitle:@"ScrollDirectionVertical" forState:UIControlStateNormal];
-        _collectionView.frame = CGRectMake(0, 50, self.view.frame.size.width, self.view.frame.size.height - 200);
     } else {
         [_btnDirection setTitle:@"ScrollDirectionHorizontal" forState:UIControlStateNormal];
-        _collectionView.frame = CGRectMake(0, 50, self.view.frame.size.width, self.view.frame.size.height - 200);
     }
-}
-
-- (void)actionUICollectionViewFlowLayout:(UIButton *)sender {
-    CollectionViewsTableViewController *tableVC = [[CollectionViewsTableViewController alloc] init];
-    
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:tableVC];
-    
-    [self presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)actionUICollectionViewHeader:(UIButton *)sender {
@@ -201,6 +200,19 @@
     
     HeaderFooterCollectionViewController *headerVC = [[HeaderFooterCollectionViewController alloc] initWithCollectionViewLayout:layoutHeader];
     [self presentViewController:headerVC animated:NO completion:nil];
+}
+
+- (void)actionFilters:(UIButton *)sender {
+    FiltersViewController *filtersVC = [[FiltersViewController alloc] init];
+    [self presentViewController:filtersVC animated:NO completion:nil];
+}
+
+- (void)actionUICollectionViewFlowLayout:(UIButton *)sender {
+    CollectionViewsTableViewController *tableVC = [[CollectionViewsTableViewController alloc] init];
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:tableVC];
+    
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 @end
