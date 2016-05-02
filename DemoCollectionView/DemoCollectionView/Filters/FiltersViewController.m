@@ -13,7 +13,10 @@
 
 @end
 
-@implementation FiltersViewController
+@implementation FiltersViewController {
+
+    UIView *viewBackground;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,11 +25,13 @@
     
     [self initCollectionView];
     
+    [self initDecorationView];
+    
     [self addButton];
 }
 
 - (void)initCollectionView {
-    UIView *viewBackground = [[UIView alloc] initWithFrame:CGRectMake(0, 300, CGRectGetWidth(self.view.frame), 100)];
+    viewBackground = [[UIView alloc] initWithFrame:CGRectMake(0, 300, CGRectGetWidth(self.view.frame), 120)];
     viewBackground.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:viewBackground];
     
@@ -49,6 +54,29 @@
     _filtersController = [[FiltersController alloc] init];
     _collectionView.dataSource = _filtersController;
     _collectionView.delegate = _filtersController;
+}
+
+- (void)initDecorationView {
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+    
+    
+    _decorationView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(viewBackground.frame) - 20, CGRectGetWidth(viewBackground.frame), 1) collectionViewLayout:layout];
+    _decorationView.backgroundColor = [UIColor redColor];
+    [viewBackground addSubview:_decorationView];
+    
+    _decorationView.showsHorizontalScrollIndicator = NO;
+    _decorationView.showsVerticalScrollIndicator = NO;
+    _decorationView.pagingEnabled = YES;
+    _decorationView.bounces = NO;
+    
+    [_decorationView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:CellDecoration];
+    
+    _decorationController = [[DecorationController alloc] init];
+    _decorationController.filtersCollectionView = _collectionView;
+    
+    _decorationView.dataSource = _decorationController;
+    _decorationView.delegate = _decorationController;
 }
 
 - (void)addButton {

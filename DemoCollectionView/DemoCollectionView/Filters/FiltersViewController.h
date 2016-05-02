@@ -7,12 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #import "FiltersController.h"
+#import "DecorationController.h"
 
 @interface FiltersViewController : UIViewController
 
 @property (nonatomic, strong) FiltersController *filtersController;
 
 @property (nonatomic, strong) UICollectionView *collectionView;
+
+
+@property (nonatomic, strong) DecorationController *decorationController;
+
+@property (nonatomic, strong) UICollectionView *decorationView;
 
 @end

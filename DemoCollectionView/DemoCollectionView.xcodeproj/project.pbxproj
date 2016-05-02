@@ -20,6 +20,7 @@
 		8394C2491CD59AD90019C3BB /* CustomCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8394C2471CD59AD90019C3BB /* CustomCollectionViewController.m */; };
 		8394C24D1CD5A51B0019C3BB /* FiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8394C24C1CD5A51B0019C3BB /* FiltersViewController.m */; };
 		8394C2501CD5A52E0019C3BB /* FiltersController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8394C24F1CD5A52E0019C3BB /* FiltersController.m */; };
+		8394C2561CD65E4C0019C3BB /* DecorationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8394C2551CD65E4C0019C3BB /* DecorationController.m */; };
 		A4E362581BA8DCF2003EFC3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E362571BA8DCF2003EFC3A /* main.m */; };
 		A4E3625B1BA8DCF2003EFC3A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E3625A1BA8DCF2003EFC3A /* AppDelegate.m */; };
 		A4E3625E1BA8DCF2003EFC3A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E3625D1BA8DCF2003EFC3A /* ViewController.m */; };
@@ -65,6 +66,8 @@
 		8394C24C1CD5A51B0019C3BB /* FiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiltersViewController.m; sourceTree = "<group>"; };
 		8394C24E1CD5A52E0019C3BB /* FiltersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiltersController.h; sourceTree = "<group>"; };
 		8394C24F1CD5A52E0019C3BB /* FiltersController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiltersController.m; sourceTree = "<group>"; };
+		8394C2541CD65E4C0019C3BB /* DecorationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecorationController.h; sourceTree = "<group>"; };
+		8394C2551CD65E4C0019C3BB /* DecorationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecorationController.m; sourceTree = "<group>"; };
 		A4E362521BA8DCF2003EFC3A /* DemoCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4E362561BA8DCF2003EFC3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4E362571BA8DCF2003EFC3A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -161,6 +164,8 @@
 				8394C24C1CD5A51B0019C3BB /* FiltersViewController.m */,
 				8394C24E1CD5A52E0019C3BB /* FiltersController.h */,
 				8394C24F1CD5A52E0019C3BB /* FiltersController.m */,
+				8394C2541CD65E4C0019C3BB /* DecorationController.h */,
+				8394C2551CD65E4C0019C3BB /* DecorationController.m */,
 			);
 			path = Filters;
 			sourceTree = "<group>";
@@ -389,6 +394,7 @@
 				8394C2421CD595340019C3BB /* CollectionViewCell.m in Sources */,
 				8394C2311CD594350019C3BB /* CollectionViewsTableViewController.m in Sources */,
 				8394C2491CD59AD90019C3BB /* CustomCollectionViewController.m in Sources */,
+				8394C2561CD65E4C0019C3BB /* DecorationController.m in Sources */,
 				A4E362581BA8DCF2003EFC3A /* main.m in Sources */,
 				8394C2501CD5A52E0019C3BB /* FiltersController.m in Sources */,
 			);
