@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  Base UICollectionReusableView
+ */
 @interface CollectionReusableView : UICollectionReusableView
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;

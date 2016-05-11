@@ -9,9 +9,11 @@
 #define _CELL   @"acell"
 
 #import "ViewController.h"
-#import "CollectionViewsTableViewController.h"
+#import "CollectionViewCell.h"
+
 #import "HeaderFooterCollectionViewController.h"
 #import "FiltersViewController.h"
+#import "CollectionViewsTableViewController.h"
 
 @interface ViewController () <
     UICollectionViewDataSource,
@@ -57,7 +59,8 @@
     bgView.backgroundColor = [UIColor blackColor];
     _collectionView.backgroundView = bgView;
     
-    [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:_CELL];
+    [_collectionView registerNib:[UINib nibWithNibName:@"CollectionViewCell" bundle:nil] forCellWithReuseIdentifier:_CELL];
+    
     _collectionView.backgroundColor = [UIColor whiteColor];
     _collectionView.pagingEnabled = YES;
     _collectionView.bounces = NO;
@@ -79,8 +82,8 @@
     return _itemCount;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:_CELL forIndexPath:indexPath];
+- (CollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CollectionViewCell *cell = (CollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:_CELL forIndexPath:indexPath];
     switch (indexPath.section) {
         case 0:
             cell.backgroundColor = [UIColor redColor];
@@ -94,6 +97,9 @@
         default:
             break;
     }
+    
+    cell.labelIndexPath.text = [NSString stringWithFormat:@"%ld - %ld", (long)indexPath.section, (long)indexPath.item];
+    
     return cell;
 }
 
