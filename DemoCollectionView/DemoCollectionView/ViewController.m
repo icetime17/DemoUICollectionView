@@ -182,7 +182,7 @@
     [self.view addSubview:btn2];
     
     UIButton *btn3 = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 50, self.view.frame.size.width, 50)];
-    [btn3 setTitle:@"FlowLayout" forState:UIControlStateNormal];
+    [btn3 setTitle:@"Layout" forState:UIControlStateNormal];
     [btn3 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [btn3 setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
     [btn3 addTarget:self action:@selector(actionUICollectionViewFlowLayout:) forControlEvents:UIControlEventTouchUpInside];

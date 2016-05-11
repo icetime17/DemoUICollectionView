@@ -28,6 +28,8 @@ static NSString * const CellReuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"Layout";
+    
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellReuseIdentifier];
     
     collectionViewTypes = @[@"Default Flow", @"Linear", @"Rotary", @"Carousel", @"CoverFlow", @"Horizontal",
@@ -108,6 +110,7 @@ static NSString * const CellReuseIdentifier = @"Cell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     CustomCollectionViewController *collectionViewVC;
+    
     switch (indexPath.row) {
         case 0:
         {
@@ -165,6 +168,8 @@ static NSString * const CellReuseIdentifier = @"Cell";
             break;
         }
     }
+    
+    collectionViewVC.title = collectionViewTypes[indexPath.row];
     
     [self.navigationController pushViewController:collectionViewVC animated:YES];
 }
