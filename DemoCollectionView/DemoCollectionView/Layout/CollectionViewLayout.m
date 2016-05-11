@@ -12,8 +12,8 @@
 
     NSInteger cellCount;
     
-    CGFloat _viewHeight;
-    CGFloat _itemHeight;
+    CGFloat _heightCollectionView;
+    CGFloat _heightCollectionViewCell;
 }
 
 - (instancetype)initWithType:(LayoutCollectionView)type
@@ -35,15 +35,17 @@
     
     cellCount = [self.collectionView numberOfItemsInSection:0];
     
-    _viewHeight = CGRectGetHeight(self.collectionView.frame);
-    _itemHeight = self.itemSize.height;
+    _heightCollectionView = CGRectGetHeight(self.collectionView.frame);
+    _heightCollectionViewCell = self.itemSize.height;
+    
     // 设置content的缩进
-    self.collectionView.contentInset = UIEdgeInsetsMake((_viewHeight - _itemHeight) / 2, 0, (_viewHeight - _itemHeight) / 2, 0);
+    // 刚好cell滑动至屏幕最中间的时候，尺寸最大。
+    self.collectionView.contentInset = UIEdgeInsetsMake((_heightCollectionView - _heightCollectionViewCell) / 2, 0, (_heightCollectionView - _heightCollectionViewCell) / 2, 0);
 }
 
 // collectionView内容尺寸
 - (CGSize)collectionViewContentSize {
-    return CGSizeMake(CGRectGetWidth(self.collectionView.frame), _itemHeight * cellCount);
+    return CGSizeMake(CGRectGetWidth(self.collectionView.frame), _heightCollectionViewCell * cellCount);
 }
 
 // 返回rect中所有元素的布局信息组成的数组
@@ -94,13 +96,13 @@
     //    CGFloat y = self.collectionView.bounds.origin.y + 64 + setoff * indexPath.row;
     //    attributes.center = CGPointMake(x, y);
     
-    CGFloat cY = self.collectionView.contentOffset.y + _viewHeight / 2;
-    CGFloat attributesY = _itemHeight * indexPath.row + _itemHeight / 2;
+    CGFloat cY = self.collectionView.contentOffset.y + _heightCollectionView / 2;
+    CGFloat attributesY = _heightCollectionViewCell * indexPath.row + _heightCollectionViewCell / 2;
     attributes.zIndex = -ABS(attributesY - cY);
     
     CGFloat delta = cY - attributesY;
-    CGFloat ratio =  - delta / (_itemHeight * 2);
-    CGFloat scale = 1 - ABS(delta) / (_itemHeight * 6.0) * cos(ratio * M_PI_4);
+    CGFloat ratio =  - delta / (_heightCollectionViewCell * 2);
+    CGFloat scale = 1 - ABS(delta) / (_heightCollectionViewCell * 6.0) * cos(ratio * M_PI_4);
     attributes.transform = CGAffineTransformMakeScale(scale, scale);
     
     CGFloat centerY = attributesY;
