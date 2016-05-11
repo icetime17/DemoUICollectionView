@@ -113,14 +113,14 @@
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    // 最小行间距
+    // 每一个section中的每一行（列）之间的间隔
     // vertical：同一个section的上下两行（另起一行）之间的最小间隔
     // horizontal：同一个section的左右两列（另起一列）之间的最小间隔
     return 5.0;
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    // 最小item间距
+    // 每一个section中的每一行之间的间隔
     // vertical：一行间水平（horizontal）相邻两个item之间的最小间隔
     // horizontal：一列间上下（vertical）相邻两个item之间的最小间隔
     // 而item之间实际的间隔由UIEdgeInsets及item个数共同决定（各item之间尽量保持相同间距，不够就另起一行）
@@ -158,10 +158,10 @@
     [self.view addSubview:_btnDirection];
     
     UIButton *btn1 = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 150, self.view.frame.size.width, 50)];
-    [btn1 setTitle:@"UICollectionViewHeader" forState:UIControlStateNormal];
+    [btn1 setTitle:@"Header and Footer" forState:UIControlStateNormal];
     [btn1 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [btn1 setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
-    [btn1 addTarget:self action:@selector(actionUICollectionViewHeader:) forControlEvents:UIControlEventTouchUpInside];
+    [btn1 addTarget:self action:@selector(actionUICollectionViewHeaderFooter:) forControlEvents:UIControlEventTouchUpInside];
     btn1.layer.borderColor = [UIColor redColor].CGColor;
     btn1.layer.borderWidth = 2.0f;
     [self.view addSubview:btn1];
@@ -194,7 +194,7 @@
     }
 }
 
-- (void)actionUICollectionViewHeader:(UIButton *)sender {
+- (void)actionUICollectionViewHeaderFooter:(UIButton *)sender {
     UICollectionViewFlowLayout *layoutHeader = [[UICollectionViewFlowLayout alloc] init];
     layoutHeader.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     

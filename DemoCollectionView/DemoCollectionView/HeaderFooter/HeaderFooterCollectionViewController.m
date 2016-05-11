@@ -10,7 +10,9 @@
 #import "CollectionViewCell.h"
 #import "CollectionReusableView.h"
 
-@interface HeaderFooterCollectionViewController () <UICollectionViewDelegateFlowLayout>
+@interface HeaderFooterCollectionViewController () <
+    UICollectionViewDelegateFlowLayout
+>
 
 @end
 
@@ -41,6 +43,8 @@ static NSString * const reuseFooterIdentifier = @"Footer";
     
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    
     [self addButton];
 }
 
@@ -50,7 +54,7 @@ static NSString * const reuseFooterIdentifier = @"Footer";
 }
 
 - (void)addButton {
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 150, self.view.frame.size.width, 50)];
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 50, self.view.frame.size.width, 50)];
     [btn setTitle:@"Back" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
@@ -166,18 +170,18 @@ static NSString * const reuseFooterIdentifier = @"Footer";
     return UIEdgeInsetsMake(0, 0, 0, 0);
 }
 
-// 最小行间距
-// vertical：同一个section的上下两行（另起一行）之间的最小间隔
-// horizontal：同一个section的左右两列（另起一列）之间的最小间隔
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    // 每一个section中的每一行（列）之间的间隔
+    // vertical：同一个section的上下两行（另起一行）之间的最小间隔
+    // horizontal：同一个section的左右两列（另起一列）之间的最小间隔
     return 10.0f;
 }
 
-// 最小item间距
-// vertical：一行间水平（horizontal）相邻两个item之间的最小间隔
-// horizontal：一列间上下（vertical）相邻两个item之间的最小间隔
-// 而item之间实际的间隔由UIEdgeInsets及item个数共同决定（各item之间尽量保持相同间距，不够就另起一行）
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    // 每一个section中的每一行之间的间隔
+    // vertical：一行间水平（horizontal）相邻两个item之间的最小间隔
+    // horizontal：一列间上下（vertical）相邻两个item之间的最小间隔
+    // 而item之间实际的间隔由UIEdgeInsets及item个数共同决定（各item之间尽量保持相同间距，不够就另起一行）
     return 0.0f;
 }
 

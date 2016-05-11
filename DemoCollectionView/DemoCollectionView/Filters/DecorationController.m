@@ -48,13 +48,19 @@ static const CGFloat widthBetweenFiltersSection = 16.f; // 滤镜缩略图sectio
     return UIEdgeInsetsMake(0, 0, 0, widthBetweenFiltersSection);
 }
 
-//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-//
-//}
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    // 每一个section中的每一行（列）之间的间隔
+    // vertical：同一个section的上下两行（另起一行）之间的最小间隔
+    // horizontal：同一个section的左右两列（另起一列）之间的最小间隔
+    return 0;
+}
 
-// 每个cell之间的最小间隔
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    return 16.0f; // 滤镜缩略图section的间距
+    // 每一个section中的每一行之间的间隔
+    // vertical：一行间水平（horizontal）相邻两个item之间的最小间隔
+    // horizontal：一列间上下（vertical）相邻两个item之间的最小间隔
+    // 而item之间实际的间隔由UIEdgeInsets及item个数共同决定（各item之间尽量保持相同间距，不够就另起一行）
+    return 16.0f;
 }
 
 //- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
