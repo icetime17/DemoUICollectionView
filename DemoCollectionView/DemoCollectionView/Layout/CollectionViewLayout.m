@@ -12,7 +12,10 @@
 
     NSInteger cellCount;
     
+    CGFloat _widthCollectionView;
     CGFloat _heightCollectionView;
+    
+    CGFloat _widthCollectionViewCell;
     CGFloat _heightCollectionViewCell;
 }
 
@@ -33,10 +36,13 @@
 - (void)prepareLayout {
     [super prepareLayout];
     
-    cellCount = [self.collectionView numberOfItemsInSection:0];
+    cellCount                   = [self.collectionView numberOfItemsInSection:0];
     
-    _heightCollectionView = CGRectGetHeight(self.collectionView.frame);
-    _heightCollectionViewCell = self.itemSize.height;
+    _widthCollectionView        = CGRectGetWidth(self.collectionView.frame);
+    _heightCollectionView       = CGRectGetHeight(self.collectionView.frame);
+    
+    _widthCollectionViewCell    = self.itemSize.width;
+    _heightCollectionViewCell   = self.itemSize.height;
     
     // 设置content的缩进
     // 刚好cell滑动至屏幕最中间的时候，尺寸最大。
