@@ -11,6 +11,8 @@
 
 #import "CollectionViewLayout.h"
 
+#import "CollectionLayoutScrollView.h"
+#import "CollectionLayoutCircle.h"
 #import "StickCollectionViewFlowLayout.h"
 
 @interface CollectionViewsTableViewController ()
@@ -32,7 +34,13 @@ static NSString * const CellReuseIdentifier = @"Cell";
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellReuseIdentifier];
     
-    collectionViewTypes = @[@"Default Flow", @"Linear", @"Rotary", @"Carousel", @"CoverFlow", @"Horizontal",
+    collectionViewTypes = @[@"Default Flow",
+                            @"Linear",
+                            @"Rotary",
+                            @"Carousel",
+                            @"CoverFlow",
+                            @"HorizontalScrollView",
+                            @"Layout_Circle",
                             @"Sticky"];
     
     [self addButtonBack];
@@ -112,35 +120,35 @@ static NSString * const CellReuseIdentifier = @"Cell";
     CustomCollectionViewController *collectionViewVC;
     
     switch (indexPath.row) {
-        case 0:
+        case Layout_DefaultFlow:
         {
             CollectionViewLayout *layout = [[CollectionViewLayout alloc] initWithType:Layout_DefaultFlow];
             layout.itemSize = CGSizeMake(250, 250);
             collectionViewVC = [[CustomCollectionViewController alloc] initWithCollectionViewLayout:layout];
             break;
         }
-        case 1:
+        case Layout_Linear:
         {
             CollectionViewLayout *layout = [[CollectionViewLayout alloc] initWithType:Layout_Linear];
             layout.itemSize = CGSizeMake(250, 250);
             collectionViewVC = [[CustomCollectionViewController alloc] initWithCollectionViewLayout:layout];
             break;
         }
-        case 2:
+        case Layout_Rotary:
         {
             CollectionViewLayout *layout = [[CollectionViewLayout alloc] initWithType:Layout_Rotary];
             layout.itemSize = CGSizeMake(250, 250);
             collectionViewVC = [[CustomCollectionViewController alloc] initWithCollectionViewLayout:layout];
             break;
         }
-        case 3:
+        case Layout_Carousel:
         {
             CollectionViewLayout *layout = [[CollectionViewLayout alloc] initWithType:Layout_Carousel];
             layout.itemSize = CGSizeMake(250, 250);
             collectionViewVC = [[CustomCollectionViewController alloc] initWithCollectionViewLayout:layout];
             break;
         }
-        case 4:
+        case Layout_CoverFlow:
         {
             CollectionViewLayout *layout = [[CollectionViewLayout alloc] initWithType:Layout_CoverFlow];
             layout.scrollDirection = UICollectionViewScrollDirectionVertical;
@@ -148,15 +156,23 @@ static NSString * const CellReuseIdentifier = @"Cell";
             collectionViewVC = [[CustomCollectionViewController alloc] initWithCollectionViewLayout:layout];
             break;
         }
-        case 5:
+        case Layout_HorizontalScrollView:
         {
-            CollectionViewLayout *layout = [[CollectionViewLayout alloc] initWithType:Layout_Horizontal];
-            layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-            layout.itemSize = CGSizeMake(250, 250);
+            CollectionLayoutScrollView *layout = [[CollectionLayoutScrollView alloc] init];
+            
             collectionViewVC = [[CustomCollectionViewController alloc] initWithCollectionViewLayout:layout];
+            collectionViewVC.collectionView.frame = CGRectMake(0, 200, CGRectGetWidth(collectionViewVC.view.frame), 250);
             break;
         }
-        case 6:
+        case Layout_Circle:
+        {
+            CollectionLayoutCircle *layout = [[CollectionLayoutCircle alloc] init];
+            
+            collectionViewVC = [[CustomCollectionViewController alloc] initWithCollectionViewLayout:layout];
+            collectionViewVC.collectionView.frame = CGRectMake(0, 200, CGRectGetWidth(collectionViewVC.view.frame), 250);
+        }
+            break;
+        case Layout_Sticky:
         {
             StickCollectionViewFlowLayout *layout = [[StickCollectionViewFlowLayout alloc] init];
             layout.firstItemTransform = 0.05f;

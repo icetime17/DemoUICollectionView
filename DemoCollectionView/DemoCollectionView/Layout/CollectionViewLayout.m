@@ -51,11 +51,12 @@
 
 // collectionView内容尺寸
 - (CGSize)collectionViewContentSize {
-    return CGSizeMake(CGRectGetWidth(self.collectionView.frame), _heightCollectionViewCell * cellCount);
+    return CGSizeMake(_widthCollectionView, _heightCollectionViewCell * cellCount);
 }
 
 // 返回rect中所有元素的布局信息组成的数组
 - (nullable NSArray<__kindof UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect {
+    
     NSMutableArray *array = [NSMutableArray array];
     for (NSInteger i = 0; i < cellCount; i++) {
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0];
@@ -113,7 +114,7 @@
     
     CGFloat centerY = attributesY;
     
-    attributes.center = CGPointMake(CGRectGetWidth(self.collectionView.frame) / 2, centerY);
+    attributes.center = CGPointMake(_widthCollectionView / 2, centerY);
 
     return attributes;
 }

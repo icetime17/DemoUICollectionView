@@ -14,7 +14,9 @@ typedef NS_ENUM(NSInteger, LayoutCollectionView) {
     Layout_Rotary,
     Layout_Carousel,
     Layout_CoverFlow,
-    Layout_Horizontal,
+    Layout_HorizontalScrollView,
+    Layout_Circle,
+    Layout_Sticky,
 };
 
 @interface CollectionViewLayout : UICollectionViewLayout

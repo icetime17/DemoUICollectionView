@@ -21,6 +21,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
+    self.collectionView.bounces = NO;
     
     // 采用自定义的CollectionViewCell
     [self.collectionView registerNib:[UINib nibWithNibName:@"CollectionViewCell" bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
