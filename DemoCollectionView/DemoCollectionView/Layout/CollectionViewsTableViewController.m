@@ -15,6 +15,8 @@
 #import "CollectionLayoutCircle.h"
 #import "StickCollectionViewFlowLayout.h"
 
+#import "HJCarouselViewLayout.h"
+
 @interface CollectionViewsTableViewController ()
 
 @end
@@ -158,7 +160,10 @@ static NSString * const CellReuseIdentifier = @"Cell";
         }
         case Layout_HorizontalScrollView:
         {
-            CollectionLayoutScrollView *layout = [[CollectionLayoutScrollView alloc] init];
+//            CollectionLayoutScrollView *layout = [[CollectionLayoutScrollView alloc] init];
+            HJCarouselViewLayout *layout = [[HJCarouselViewLayout alloc] initWithAnim:HJCarouselAnimLinear];
+            layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+            layout.itemSize = CGSizeMake(250, 250);
             
             collectionViewVC = [[CustomCollectionViewController alloc] initWithCollectionViewLayout:layout];
             collectionViewVC.collectionView.frame = CGRectMake(0, 200, CGRectGetWidth(collectionViewVC.view.frame), 250);

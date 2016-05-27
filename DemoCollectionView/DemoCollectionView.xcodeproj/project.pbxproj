@@ -13,6 +13,7 @@
 		8394C24D1CD5A51B0019C3BB /* FiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8394C24C1CD5A51B0019C3BB /* FiltersViewController.m */; };
 		8394C2501CD5A52E0019C3BB /* FiltersController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8394C24F1CD5A52E0019C3BB /* FiltersController.m */; };
 		8394C2561CD65E4C0019C3BB /* DecorationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8394C2551CD65E4C0019C3BB /* DecorationController.m */; };
+		A4A816F41CE8B6970024457E /* HJCarouselViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A816F31CE8B6970024457E /* HJCarouselViewLayout.m */; };
 		A4D639DC1CE32AB40039321D /* CollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D639D51CE32AB40039321D /* CollectionViewLayout.m */; };
 		A4D639DD1CE32AB40039321D /* CollectionViewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D639D71CE32AB40039321D /* CollectionViewsTableViewController.m */; };
 		A4D639DE1CE32AB40039321D /* CustomCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D639D91CE32AB40039321D /* CustomCollectionViewController.m */; };
@@ -56,6 +57,8 @@
 		8394C24F1CD5A52E0019C3BB /* FiltersController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiltersController.m; sourceTree = "<group>"; };
 		8394C2541CD65E4C0019C3BB /* DecorationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecorationController.h; sourceTree = "<group>"; };
 		8394C2551CD65E4C0019C3BB /* DecorationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecorationController.m; sourceTree = "<group>"; };
+		A4A816F21CE8B6970024457E /* HJCarouselViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJCarouselViewLayout.h; sourceTree = "<group>"; };
+		A4A816F31CE8B6970024457E /* HJCarouselViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJCarouselViewLayout.m; sourceTree = "<group>"; };
 		A4D639D41CE32AB40039321D /* CollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewLayout.h; sourceTree = "<group>"; };
 		A4D639D51CE32AB40039321D /* CollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewLayout.m; sourceTree = "<group>"; };
 		A4D639D61CE32AB40039321D /* CollectionViewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewsTableViewController.h; sourceTree = "<group>"; };
@@ -167,6 +170,8 @@
 		A4D639D31CE32AB40039321D /* Layout */ = {
 			isa = PBXGroup;
 			children = (
+				A4A816F21CE8B6970024457E /* HJCarouselViewLayout.h */,
+				A4A816F31CE8B6970024457E /* HJCarouselViewLayout.m */,
 				A4D639D41CE32AB40039321D /* CollectionViewLayout.h */,
 				A4D639D51CE32AB40039321D /* CollectionViewLayout.m */,
 				A4D639EB1CE41E8B0039321D /* CollectionLayoutScrollView.h */,
@@ -436,6 +441,7 @@
 				A4D639DD1CE32AB40039321D /* CollectionViewsTableViewController.m in Sources */,
 				A4D639F01CE43B320039321D /* CollectionLayoutCircle.m in Sources */,
 				A4D639DC1CE32AB40039321D /* CollectionViewLayout.m in Sources */,
+				A4A816F41CE8B6970024457E /* HJCarouselViewLayout.m in Sources */,
 				A4D639ED1CE41E8B0039321D /* CollectionLayoutScrollView.m in Sources */,
 				A4D639DE1CE32AB40039321D /* CustomCollectionViewController.m in Sources */,
 				A4D639DF1CE32AB40039321D /* StickCollectionViewFlowLayout.m in Sources */,
