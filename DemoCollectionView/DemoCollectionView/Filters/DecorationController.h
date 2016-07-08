@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#import "FilterDecorationCollectionViewCell.h"
 
-#define CellDecoration    @"CellDecoration"
+#define FilterCellDecoration    @"FilterCellDecoration"
 
 @interface DecorationController : NSObject <
 
@@ -21,5 +22,7 @@
 >
 
 @property (nonatomic, strong) UICollectionView *filtersCollectionView;
+
+- (void)performScrollViewDidScroll:(UIScrollView *)scrollView;
 
 @end

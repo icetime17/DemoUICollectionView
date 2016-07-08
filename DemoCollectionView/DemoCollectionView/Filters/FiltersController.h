@@ -9,8 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#import "FilterCollectionViewCell.h"
 
-#define CELL    @"Cell"
+
+#define FilterCELL    @"FilterCell"
+
+@protocol FiltersControllerDelegate;
+
 
 @interface FiltersController : NSObject <
 
@@ -20,7 +25,15 @@
 
 >
 
-
 @property (nonatomic, weak) UICollectionView *collectionView;
+
+@property (nonatomic, weak) id<FiltersControllerDelegate> filtersControllerDelegate;
+
+@end
+
+
+@protocol FiltersControllerDelegate <NSObject>
+
+- (void)FiltersControllerDelegate:(FiltersController *)filtersController scrollViewDidScroll:(UIScrollView *)scrollView;
 
 @end

@@ -24,6 +24,10 @@
 		A4D639EA1CE32ABA0039321D /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4D639E61CE32ABA0039321D /* CollectionViewCell.xib */; };
 		A4D639ED1CE41E8B0039321D /* CollectionLayoutScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D639EC1CE41E8B0039321D /* CollectionLayoutScrollView.m */; };
 		A4D639F01CE43B320039321D /* CollectionLayoutCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D639EF1CE43B320039321D /* CollectionLayoutCircle.m */; };
+		A4DD33391D2F55A400F1F631 /* FilterDecorationCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DD33371D2F55A400F1F631 /* FilterDecorationCollectionViewCell.m */; };
+		A4DD333A1D2F55A400F1F631 /* FilterDecorationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DD33381D2F55A400F1F631 /* FilterDecorationCollectionViewCell.xib */; };
+		A4DD333E1D2F726800F1F631 /* FilterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DD333C1D2F726800F1F631 /* FilterCollectionViewCell.m */; };
+		A4DD333F1D2F726800F1F631 /* FilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DD333D1D2F726800F1F631 /* FilterCollectionViewCell.xib */; };
 		A4E362581BA8DCF2003EFC3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E362571BA8DCF2003EFC3A /* main.m */; };
 		A4E3625B1BA8DCF2003EFC3A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E3625A1BA8DCF2003EFC3A /* AppDelegate.m */; };
 		A4E3625E1BA8DCF2003EFC3A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E3625D1BA8DCF2003EFC3A /* ViewController.m */; };
@@ -77,6 +81,12 @@
 		A4D639EC1CE41E8B0039321D /* CollectionLayoutScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionLayoutScrollView.m; sourceTree = "<group>"; };
 		A4D639EE1CE43B320039321D /* CollectionLayoutCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionLayoutCircle.h; sourceTree = "<group>"; };
 		A4D639EF1CE43B320039321D /* CollectionLayoutCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionLayoutCircle.m; sourceTree = "<group>"; };
+		A4DD33361D2F55A400F1F631 /* FilterDecorationCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterDecorationCollectionViewCell.h; sourceTree = "<group>"; };
+		A4DD33371D2F55A400F1F631 /* FilterDecorationCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterDecorationCollectionViewCell.m; sourceTree = "<group>"; };
+		A4DD33381D2F55A400F1F631 /* FilterDecorationCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterDecorationCollectionViewCell.xib; sourceTree = "<group>"; };
+		A4DD333B1D2F726800F1F631 /* FilterCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterCollectionViewCell.h; sourceTree = "<group>"; };
+		A4DD333C1D2F726800F1F631 /* FilterCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterCollectionViewCell.m; sourceTree = "<group>"; };
+		A4DD333D1D2F726800F1F631 /* FilterCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterCollectionViewCell.xib; sourceTree = "<group>"; };
 		A4E362521BA8DCF2003EFC3A /* DemoCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4E362561BA8DCF2003EFC3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4E362571BA8DCF2003EFC3A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -156,6 +166,12 @@
 		A4D639D11CE32A550039321D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A4DD33361D2F55A400F1F631 /* FilterDecorationCollectionViewCell.h */,
+				A4DD33371D2F55A400F1F631 /* FilterDecorationCollectionViewCell.m */,
+				A4DD33381D2F55A400F1F631 /* FilterDecorationCollectionViewCell.xib */,
+				A4DD333B1D2F726800F1F631 /* FilterCollectionViewCell.h */,
+				A4DD333C1D2F726800F1F631 /* FilterCollectionViewCell.m */,
+				A4DD333D1D2F726800F1F631 /* FilterCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -363,6 +379,8 @@
 				A4D639EA1CE32ABA0039321D /* CollectionViewCell.xib in Resources */,
 				A4D639E81CE32ABA0039321D /* CollectionReusableView.xib in Resources */,
 				A4E362611BA8DCF2003EFC3A /* Main.storyboard in Resources */,
+				A4DD333F1D2F726800F1F631 /* FilterCollectionViewCell.xib in Resources */,
+				A4DD333A1D2F55A400F1F631 /* FilterDecorationCollectionViewCell.xib in Resources */,
 				8394C2331CD594350019C3BB /* Header.jpg in Resources */,
 				A4E362661BA8DCF2003EFC3A /* LaunchScreen.xib in Resources */,
 				A4E362631BA8DCF2003EFC3A /* Images.xcassets in Resources */,
@@ -431,11 +449,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4DD333E1D2F726800F1F631 /* FilterCollectionViewCell.m in Sources */,
 				A4E3625E1BA8DCF2003EFC3A /* ViewController.m in Sources */,
 				8394C2381CD594910019C3BB /* HeaderFooterCollectionViewController.m in Sources */,
 				8394C24D1CD5A51B0019C3BB /* FiltersViewController.m in Sources */,
 				A4E3625B1BA8DCF2003EFC3A /* AppDelegate.m in Sources */,
 				8394C2561CD65E4C0019C3BB /* DecorationController.m in Sources */,
+				A4DD33391D2F55A400F1F631 /* FilterDecorationCollectionViewCell.m in Sources */,
 				A4D639E71CE32ABA0039321D /* CollectionReusableView.m in Sources */,
 				A4E362581BA8DCF2003EFC3A /* main.m in Sources */,
 				A4D639DD1CE32AB40039321D /* CollectionViewsTableViewController.m in Sources */,
@@ -575,6 +595,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DemoCollectionView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "icetime17.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -587,6 +608,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DemoCollectionView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "icetime17.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

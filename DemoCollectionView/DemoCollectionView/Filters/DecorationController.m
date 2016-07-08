@@ -10,18 +10,29 @@
 
 @implementation DecorationController
 
+- (void)performScrollViewDidScroll:(UIScrollView *)scrollView {
+    
+}
+
 #pragma mark - UICollectionViewDataSource
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return _filtersCollectionView.numberOfSections;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellDecoration forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor colorWithRed:arc4random_uniform(255)/255.0
-                                           green:arc4random_uniform(255)/255.0
-                                            blue:arc4random_uniform(255)/255.0
-                                           alpha:1];
+- (FilterDecorationCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    FilterDecorationCollectionViewCell *cell = (FilterDecorationCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:FilterCellDecoration forIndexPath:indexPath];
+    UIColor *color = [UIColor colorWithRed:arc4random_uniform(255)/255.0
+                                     green:arc4random_uniform(255)/255.0
+                                     blue:arc4random_uniform(255)/255.0
+                                    alpha:1];
+    cell.lineLeft.backgroundColor   = color;
+    cell.lineRight.backgroundColor  = color;
+    cell.labelTitle.textColor       = color;
     
     return cell;
 }
@@ -37,7 +48,7 @@ static const CGFloat widthBetweenFiltersSection = 16.f; // 滤镜缩略图sectio
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger itemsFilters = [_filtersCollectionView numberOfItemsInSection:indexPath.item];
     CGFloat width = widthCell * itemsFilters + widthBetweenCell * (itemsFilters - 1);
-    return CGSizeMake(width, 1.0f);
+    return CGSizeMake(width, 31.0f);
 }
 
 // 设置section的insets属性, 即section之间的间隔.
