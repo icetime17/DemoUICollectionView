@@ -128,13 +128,30 @@ static NSString * const reuseFooterIdentifier = @"Footer";
 
 #pragma mark <UICollectionViewDelegate>
 
-#define kWidthFooter 250
+#define kWidthFooter 300
 
 - (CGPoint)nearestTargetOffsetForOffset:(CGPoint)offset
 {
-    CGFloat pageSize = self.collectionView.frame.size.width + kWidthFooter;
-    NSInteger page = roundf(offset.x / pageSize);
-    CGFloat targetX = pageSize * page;
+    CGFloat targetX = offset.x;
+    
+    CGFloat kWidthCell = self.collectionView.frame.size.width;
+    
+    CGFloat pageSize = kWidthCell + kWidthFooter;
+    
+    // 此处不能使用roundf来四舍五入，要使用floorf来下取整。
+    NSInteger page = floorf(offset.x / pageSize); // 第几页
+    
+    if (offset.x > pageSize * page &&
+        offset.x < pageSize * page + kWidthFooter / 2) {
+        targetX = pageSize * page;
+    } else if (offset.x > pageSize * page + kWidthFooter / 2 &&
+               offset.x < pageSize * page + kWidthFooter + kWidthCell / 2) {
+        targetX = pageSize * page + kWidthFooter;
+    } else if (offset.x > pageSize * page + kWidthFooter + kWidthCell / 2 &&
+               offset.x < pageSize * page + pageSize + kWidthFooter / 2) {
+        targetX = pageSize * page + pageSize;
+    }
+    
     return CGPointMake(targetX, offset.y);
 }
 
