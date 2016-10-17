@@ -28,7 +28,7 @@ static NSString * const reuseFooterIdentifier = @"Footer";
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     
-    self.collectionView.frame = CGRectMake(0, 150, self.view.frame.size.width, 300);
+    self.collectionView.frame = CGRectMake(0, 150, self.view.frame.size.width, 400);
     self.collectionView.backgroundColor = [UIColor lightGrayColor];
     self.collectionView.bounces = NO;
     
@@ -81,12 +81,12 @@ static NSString * const reuseFooterIdentifier = @"Footer";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 2;
+    return 5;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 5;
+    return 1;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -128,6 +128,23 @@ static NSString * const reuseFooterIdentifier = @"Footer";
 
 #pragma mark <UICollectionViewDelegate>
 
+#define kWidthFooter 250
+
+- (CGPoint)nearestTargetOffsetForOffset:(CGPoint)offset
+{
+    CGFloat pageSize = self.collectionView.frame.size.width + kWidthFooter;
+    NSInteger page = roundf(offset.x / pageSize);
+    CGFloat targetX = pageSize * page;
+    return CGPointMake(targetX, offset.y);
+}
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
+{
+    CGPoint targetOffset = [self nearestTargetOffsetForOffset:*targetContentOffset];
+    targetContentOffset->x = targetOffset.x;
+    targetContentOffset->y = targetOffset.y;
+}
+
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -160,10 +177,12 @@ static NSString * const reuseFooterIdentifier = @"Footer";
 #pragma mark - UICollectionViewDelegateFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(150, 250);
+    return collectionView.frame.size;
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsZero;
+    
     if (section != 0) {
         return UIEdgeInsetsMake(0, 50, 0, 0);
     }
@@ -174,7 +193,7 @@ static NSString * const reuseFooterIdentifier = @"Footer";
     // 每一个section中的每一行（列）之间的间隔
     // vertical：同一个section的上下两行（另起一行）之间的最小间隔
     // horizontal：同一个section的左右两列（另起一列）之间的最小间隔
-    return 10.0f;
+    return 0.0f;
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
@@ -187,6 +206,8 @@ static NSString * const reuseFooterIdentifier = @"Footer";
 
 // 第0个section有header
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+    return CGSizeZero;
+    
     if (section != 0) {
         return CGSizeZero;
     }
@@ -194,6 +215,8 @@ static NSString * const reuseFooterIdentifier = @"Footer";
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
+    return CGSizeMake(kWidthFooter, CGRectGetHeight(collectionView.frame));
+    
     if (section == 0) {
         return CGSizeZero;
     }
